@@ -87,6 +87,7 @@ export const MY_FORMATS = {
       {path: '', component: RestaurantsListComponent},
       {path: 'restaurants-list', component: RestaurantsListComponent},
       {path: 'about', component: AboutComponent},
+      {path: 'restaurants-sanitation-reports-site/about', component: AboutComponent},
     ]),
     ],
   providers: [    

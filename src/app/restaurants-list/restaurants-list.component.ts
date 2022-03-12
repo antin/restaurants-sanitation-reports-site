@@ -39,7 +39,7 @@ export class RestaurantsListComponent implements AfterViewInit {
 
   headerLinks = [
     {
-      "href": "/about/",
+      "href": this.theme_siteUrl + "about/",
       "title": "מי אנחנו"
     },
     {
