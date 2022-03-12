@@ -1,0 +1,49 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<header>
+  <div class="logo">
+    <a [href]="theme_siteUrl"  aria-label='homepage' [style.background-image]='"url(assets/img/" + theme_siteLogo + ")"'>
+    </a>  
+  </div>
+  <div  data-test-id="divRestaurantsSearch" class="search"  >
+    <!-- [(ngModel)]=searchValue -->
+    <input id="insRestaurantsSearch" [(ngModel)]="searchValue" type="text" placeholder="חיפוש לפי עיר או שם מסעדה?"   >
+  </div>
+ <div class="menu-links">
+  <ng-container *ngFor="let link of headerLinks">
+    <a [href]="link.href" [innerHtml]='link.title' target='_blank'></a>
+  </ng-container>
+</div>
+</header>
+<hr>
+
+
+<!-- async searchValueFilter:"name":"searchValue"--> 
+<div *ngFor="let restaurant of restaurants |filter:searchValue "  class="restaurants" data-test-id="MainRestaurantsListContent">
+  <div *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture" class="" 
+  style="width: 335px;height: 110px; background-image:url('../../assets/w09.gif');" >
+     &nbsp;
+  </div>  
+  <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture" class="" 
+  style="width: 335px;height: 110px; background-image:url('../../assets/35_Hotel_Icon_Has_Restaurant.gif');" >
+     &nbsp;
+  </div> 
+  <div data-test-id="divRestaurantsDetails" class="restaurants-details" >    
+    שם:{{restaurant.restaurant_details.name}} <br>
+    עיר:{{restaurant.restaurant_details.city}}
+    <br>
+    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails" class="" >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</div>
+    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails" class="" >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></div>
+    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails" class="" >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</div>
+    <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.problems != null" >
+    <div  *ngFor="let problem of restaurant.restaurant_details.restaurant_sanitation.problems " >
+      <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
+    </div>
+  </div>
+  </div>
+  <div data-test-id="divRestaurantsReports" class="" >    
+  </div>
+</div>

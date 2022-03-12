@@ -1,0 +1,91 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<header>
+  <div class="logo">
+    <a [href]="theme_siteUrl" aria-label='homepage' [style.background-image]='"url(assets/img/" + theme_siteLogo + ")"'>
+    </a>
+  </div>
+  <div data-test-id="divRestaurantsSearch" class="search">
+    <!-- [(ngModel)]=searchValue -->
+
+  </div>
+  <div class="menu-links">
+    <ng-container *ngFor="let link of headerLinks">
+      <a [href]="link.href" [innerHtml]='link.title' target='_blank'></a>
+    </ng-container>
+  </div>
+</header>
+<hr>
+
+<div _ngcontent-c0="" class="main">
+  <div _ngcontent-c0="" class="md">
+    <h1 id="">מסעדה פתוחה</h1>
+    <h2 id="govbuy">מהו אתר "מסעדה פתוחה"?</h2>
+    <p>אתר "מסעדה פתוחה" כולל נתונים על דוחות תברואה שבוצעו לבתי אוכל בישראל. המערכת כוללת מידע שפורסם בזכות מאבקים ארוכי שנים שעדיין נמשכים. האתר נועד לאפשר
+      ולהקל על בעלי עסקים להצטרף למעגל השקוף בתחומי הרשת ולהנגיש את המידע התברואתי לציבור.</p>
+    <h2 id="datasources">מאיפה הנתונים?</h2>
+    <h3 id="-1">בקשות חופש מידע</h3>
+    <p>נתונים שפורסמו בזכות בקשות חופש מידע של התנועה לחופש מידע 
+       מוצגים <a href="https://www.meida.org.il/?p=11611" rel="noopener noreferrer"
+        target="_blank">כאן </a></p>
+        <p> בנוסף בקשות חופש מידע אחרות עזרו לטייב את המידע ונוסיף אותן בהקדם.</p>
+    <h3 id="-2">מידע שבעלי המסעדות יצרפו</h3>
+    <p>חלק מחזון האתר הוא שבעלי המסעדות ישלחו בצורה יזומה את דוחות התברואה לאתר ויפעילו לחץ על משרד הבריאות לפרסמם.</p>
+    <p>ניתן לראות ששנים רבות משרד הבריאות מתלבט אם הוא נדרש לפרסם את <a
+        href="https://health.gov.il/Subjects/Environmental_Health/food/Pages/Update_Food_Service_Regulations.aspx"
+        rel="noopener noreferrer" target="_blank"> דוחות התברואה </a>.</p>    
+    <h2 id="team">הצוות</h2>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/alonantin/" rel="noopener noreferrer" target="_blank">אלון אנתין </a></li>      
+    </ul>
+    <h2 id="privacy">פרטיות</h2>
+    <ul>
+      <!-- <li>
+        <p>בעת הרשמה לקבלת התראות או תזכורות במייל מתבקשים המשתמשים לאשר גישה לפרטים הבאים בחשבון הג'ימייל שלהם: כתובת
+          דוא"ל, שם מלא וקישור לתמונת הפרופיל. נתונים אלו נשמרות במערכת האתר עם החיפושים השמורים של המשתמש/ת. שום נתון
+          אחר לא נאסף או נשמר במערכת. <a href="https://support.google.com/accounts/answer/3466521?hl=iw"
+            rel="noopener noreferrer" target="_blank">קראו כאן</a> על מדיניות ההרשאות והפרטיות של השירות</p>
+      </li>
+      <li>
+        <p>משלוח המייל עם ההתראות והתזכורות מבוססים על שירות <a href="https://www.mailgun.com" rel="noopener noreferrer"
+            target="_blank">Mailgun</a>. <a href="https://www.mailgun.com/privacy-policy" rel="noopener noreferrer"
+            target="_blank">קראו כאן</a> על מדיניות הפרטיות של השירות.</p>
+      </li>
+      <li>
+        <p>מערכת הפניה לעזרה המוטמעת באתר (צ'ט) מבוססת על שירות <a href="https://smooch.io/" rel="noopener noreferrer"
+            target="_blank">smooch</a>. <a href="https://smooch.io/privacy/" rel="noopener noreferrer"
+            target="_blank">קראו כאן</a> על מדיניות הפרטיות של השירות.</p>
+      </li>
+      <li>
+        <p>כל הפניות מוצגות לצוות "מסעדה פתוחה" באמצעות סנכרון לערוץ <a href="https://slack.com/"
+            rel="noopener noreferrer" target="_blank">Slack</a> לצד כתובת העמוד ממנו נשלחה הפניה. איננו שומרים או
+          מאכסנים את המידע מעבר לתקשורת השוטפת והמענה המיידי לפניות. <a href="https://slack.com/privacy-policy"
+            rel="noopener noreferrer" target="_blank">קראו כאן</a> על מדיניות הפרטיות של השירות.</p>
+      </li>
+    -->
+      <li>
+        <p>באתר מוטמע שירות <a href="https://marketingplatform.google.com/about/analytics/" rel="noopener noreferrer"
+            target="_blank">Google Analytics</a> לניתוח דפוסי השימוש ומיצוב האתר במנועי חיפוש. קוד זה חושף בפני מפעילי
+          השירות מידע בנוגע להתנהגות המשתמשים. <a href="https://support.google.com/analytics/answer/6004245?hl=he"
+            rel="noopener noreferrer" target="_blank">קראו כאן</a> על מדיניות הפרטיות של השירות.</p>
+      </li>
+    </ul>
+    <h2 id="licenses">רשיון שימוש</h2>
+    <p>כל המידע המוצג באתר מבוסס על נתונים המפורסמים במקורות המידע הממשלתיים. השימוש במידע כפוף ל<a
+        href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener noreferrer" target="_blank">רישיון CC BY-SA
+        4.0</a> של <a href="https://creativecommons.org/" rel="noopener noreferrer" target="_blank">Creative
+        Commons</a>.</p>
+    <h2 id="supporters">תודות</h2>
+    <!--<p>האתר הוקם בתמיכה ומימון של קרן החדשנות לאתגרי המגזר הציבורי של <a
+        href="https://www.gov.il/he/Departments/digital_israel" rel="noopener noreferrer" target="_blank">מטה ישראל
+        דיגיטלית במשרד לשוויון חברתי</a>.</p>
+    <p>תודה לאורן משה על הסיוע התוכני.</p>
+    -->
+    <h2 id="-4">שאלות? תגובות? רעיונות?</h2>
+    <p><a href="http://www.hasadna.org.il/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/" rel="noopener noreferrer"
+        target="_blank">צרו איתנו קשר</a></p>
+  </div>
+</div>
