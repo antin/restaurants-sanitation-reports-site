@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
 
   headerLinks = [
     {
-      "href": "/about/",
+      "href": "~/about/",
       "title": "מי אנחנו"
     },
     {

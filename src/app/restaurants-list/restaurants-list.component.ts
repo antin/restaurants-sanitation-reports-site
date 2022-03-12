@@ -34,7 +34,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   searchValue : string;
   
 
-  theme_siteUrl ='http://www.hasadna.org.il/';
+  theme_siteUrl ='https://antin.github.io/restaurants-sanitation-reports-site/';//'https//www.orestaurant.org/';
   theme_siteLogo ='../../assets/35_Hotel_Icon_Has_Restaurant.gif';
 
   headerLinks = [
