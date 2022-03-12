@@ -1,4 +1,3 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/f326558d-be51-41c9-add5-c879f83d7d04/resourceGroups/Uft-Dev-rg/providers/Microsoft.Web/sites/hitpakdutWebApi",
-    "appService.deploySubpath": "dist\\nl-app1"
+    "appService.deploySubpath": "dist"
 }
