@@ -86,8 +86,7 @@ export const MY_FORMATS = {
     RouterModule.forRoot([
       {path: '', component: RestaurantsListComponent},
       {path: 'restaurants-list', component: RestaurantsListComponent},
-      {path: 'about', component: AboutComponent},
-      {path: 'restaurants-sanitation-reports-site/about', component: AboutComponent},
+      {path: 'about', component: AboutComponent},      
     ]),
     ],
   providers: [    

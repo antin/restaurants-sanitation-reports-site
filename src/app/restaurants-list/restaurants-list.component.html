@@ -24,11 +24,11 @@
 <!-- async searchValueFilter:"name":"searchValue"--> 
 <div *ngFor="let restaurant of restaurants |filter:searchValue "  class="restaurants" data-test-id="MainRestaurantsListContent">
   <div *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture" class="" 
-  style="width: 335px;height: 110px; background-image:url('{{theme_siteUrl}}/assets/w09.gif');" >
+  style="width: 335px;height: 110px; background-image:url('{{theme_siteUrl}}assets/w09.gif');" >
      &nbsp;
   </div>  
   <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture" class="" 
-  style="width: 335px;height: 110px; background-image:url('{{theme_siteUrl}}/assets/35_Hotel_Icon_Has_Restaurant.gif');" >
+  style="width: 335px;height: 110px; background-image:url('{{theme_siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
      &nbsp;
   </div> 
   <div data-test-id="divRestaurantsDetails" class="restaurants-details" >    
