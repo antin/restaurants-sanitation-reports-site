@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  theme_siteUrl ='/';//'https//www.orestaurant.org/';
-  theme_siteLogo ='../../assets/35_Hotel_Icon_Has_Restaurant.gif';
+  theme_siteUrl ='';//'https//www.orestaurant.org/';
+  theme_siteLogo ='assets/35_Hotel_Icon_Has_Restaurant.gif';
 
   headerLinks = [
     {
