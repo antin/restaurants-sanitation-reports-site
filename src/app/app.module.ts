@@ -40,7 +40,9 @@ import {Component} from '@angular/core';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatDatepicker} from '@angular/material/datepicker';
 import { AboutComponent } from './about/about.component';
-
+import { orestaurantHeaderComponent } from 'src/components/ORestaurantHeaderComponent';
+import { orestaurantsListComponent } from 'src/components/ORestaurantsListComponent';
+import { orestaurantFooterComponent } from 'src/components/ORestaurantFooterComponent';
 // See the Moment.js docs for the meaning of these formats:
 // https://momentjs.com/docs/#/displaying/format/
 
@@ -65,7 +67,10 @@ export const MY_FORMATS = {
 @NgModule({
   declarations: [
     AppComponent,        
-    RestaurantsListComponent, AboutComponent,    
+    RestaurantsListComponent, AboutComponent,   
+    orestaurantHeaderComponent, 
+    orestaurantsListComponent, 
+    orestaurantFooterComponent,       
     //Ng2SearchPipeModule,
     ],
   imports: [        
@@ -81,7 +86,7 @@ export const MY_FORMATS = {
     MatIconModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule,
+    MatSelectModule,    
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: RestaurantsListComponent},

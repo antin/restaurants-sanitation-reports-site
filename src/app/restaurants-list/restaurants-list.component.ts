@@ -14,6 +14,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { restaurant } from './restaurant.component';
 //import { searchValueFilterPipe } from './search-value-filter-pipe';
+import { orestaurantHeaderComponent } from 'src/components/ORestaurantHeaderComponent';
+import { orestaurantsListComponent } from 'src/components/ORestaurantsListComponent';
 
 declare var gtag;
 
@@ -29,28 +31,11 @@ export class RestaurantsListComponent implements AfterViewInit {
 
   // if service has Errors show them
  errorMsg : string;
-
-   // if service has   searchValue filter by it throw name and city
-  searchValue : string;
   
+ 
+   // if service has   searchValue filter by it throw name and city
+   searchValue : string;
 
-  theme_siteUrl ='';//'https//www.orestaurant.org/';
-  theme_siteLogo ='assets/35_Hotel_Icon_Has_Restaurant.gif';
-
-  headerLinks = [
-    {
-      "href": this.theme_siteUrl + "about/",
-      "title": "מי אנחנו"
-    },
-    {
-      "href": "http://www.hasadna.org.il/",
-      "title": "הסדנא"
-    },
-    {
-      "href": "https://www.jgive.com/new/he/ils/donation-targets/3268#donation-modal",
-      "title": "תרמו לנו"
-    }
-  ];
   footerLinks = [
     {
       "href": "/about",
@@ -99,10 +84,11 @@ export class RestaurantsListComponent implements AfterViewInit {
     email : new FormControl('', [Validators.required, Validators.email]),    
   });
  */
-  
+  /*
   promiseRestaurants: Promise<restaurant[]>;
   public service: RestaurantsListService;
   restaurants: restaurant[] = [];
+  */
   errorMessage = '';
   data: any;
   EmpForm: FormGroup;
@@ -113,18 +99,24 @@ export class RestaurantsListComponent implements AfterViewInit {
     //private _formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
     ) {
-      this.service = ServiceService;
-
-     
-
+ 
     }
 
-    // https://javascript.plainenglish.io/how-to-apply-a-filter-to-angular-for-loop-ngfor-in-html-5871a57273cc
-    public updateSearch(event) {
-      // if service has   searchValue filter by it throw name and city
-      this.searchValue = event;
-      console.log("this.searchValue:" + this.searchValue);
-  }
+    ngOnInit() {
+    
+     }
+   
+    searchTermChanged(term: string) {
+      console.log('STC', term);
+      this.searchValue = term;
+      
+    }
+
+    public ngAfterViewInit() {
+      this.beResponsive();
+      
+    }
+    
 
   nextClicked(event) {
     // complete the current step
@@ -133,10 +125,7 @@ export class RestaurantsListComponent implements AfterViewInit {
     //this.myStepper.next();
   }
 
-  public ngAfterViewInit() {
-    this.beResponsive();
-    
-  }
+
 
 
 
@@ -155,15 +144,7 @@ export class RestaurantsListComponent implements AfterViewInit {
 
   }
 
-  ngOnInit() {
-    console.log("ngOnInit1->this.searchValue:" + this.searchValue);
-    this.promiseRestaurants = this.service.getRestaurantsWithPromise();
-    this.promiseRestaurants.then(
-      restaurants => this.restaurants = restaurants,
-       error => this.errorMessage = error);
-       console.log("ngOnInit2->this.searchValue:" + this.searchValue);
-   }
-  
+ 
 
   
 
