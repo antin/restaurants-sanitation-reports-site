@@ -4,7 +4,7 @@ export const DEFAULT_THEME =
         { "siteName": "מסעדה פתוחה" }, "ORESTAURANT_NG2_COMPONENTS_THEME":
     {
         "footerLinks":
-            [{ "href": "/about", "title": "אודות" }, 
+            [{ "href": "https://antin.github.io/restaurants-sanitation-reports-site/about", "title": "אודות" }, 
             { "href": "/about#team", "title": "הצוות" },
             //{ "href": "https://github.com/antin/restaurants-sanitation-reports-site/documentation/UsingTheAPI.md", "title": "API" },
             { "href": "https://antin.github.io/restaurants-sanitation-reports-site/datapackages/sitemaps/sitemap.html", "title": "מפת האתר" },
@@ -15,7 +15,7 @@ export const DEFAULT_THEME =
             }, { "href": "https://www.jgive.com/new/he/ils/donation-targets/3268#donation-modal", "title": "תרמו לנו" }
             ],
         "headerLinks":
-            [{ "href": "/about/", "title": "מי אנחנו" },
+            [{ "href": "https://antin.github.io/restaurants-sanitation-reports-site/about", "title": "מי אנחנו" },
             { "href": "http://www.hasadna.org.il/", "title": "הסדנא" }, 
             { "href": "https://www.jgive.com/new/he/ils/donation-targets/3268#donation-modal", "title": "תרמו לנו" }],
         "searchBarConfig": [{
