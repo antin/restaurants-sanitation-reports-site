@@ -51,6 +51,7 @@ import { orestaurantFooterComponent } from 'src/components/ORestaurantFooterComp
 
 //import {GoogleAnalyticsService} from './google-analytics/google-analytics.service';
 //import { GoogleTagManagerModule } from 'angular-google-tag-manager';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 export const MY_FORMATS = {
   parse: {
@@ -86,7 +87,8 @@ export const MY_FORMATS = {
     MatIconModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule,    
+    MatSelectModule,
+    ScrollingModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', component: RestaurantsListComponent},

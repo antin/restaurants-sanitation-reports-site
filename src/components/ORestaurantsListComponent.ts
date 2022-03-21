@@ -1,4 +1,5 @@
-import {Component,
+import {
+  Component,
   Inject,
   Input,
   Output,
@@ -8,7 +9,8 @@ import {Component,
   ViewChild,
   ElementRef,
   OnInit,
-  HostListener} from '@angular/core';
+  HostListener
+} from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { restaurant } from 'src/app/restaurants-list/restaurant.component';
@@ -18,35 +20,48 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 //import {THEME_TOKEN, LANG_TOKEN} from '../constants';
 
 @Component({
-    selector: 'orestaurants-list',
-    template: `
-          <div *ngFor="let restaurant of restaurants |filter:searchValue "  class="restaurants" data-test-id="MainRestaurantsListContent">
-  <div *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture" class="" 
-  style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
-     &nbsp;
-  </div>  
-  <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture" class="" 
-  style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
-     &nbsp;
-  </div> 
-  <div data-test-id="divRestaurantsDetails" class="restaurants-details" >    
-    שם:{{restaurant.restaurant_details.name}} <br>
-    עיר:{{restaurant.restaurant_details.city}}
-    <br>
-    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails" class="" >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</div>
-    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails" class="" >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></div>
-    <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails" class="" >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</div>
-    <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.problems != null" >
-    <div  *ngFor="let problem of restaurant.restaurant_details.restaurant_sanitation.problems " >
-      <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
-    </div>
-  </div>
-  </div>
-  <div data-test-id="divRestaurantsReports" class="" >    
-  </div>
-</div>
+  selector: 'orestaurants-list',
+  template: `
+    <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >      
+      <div *cdkVirtualFor="let restaurant of restaurants |filter:searchValue "  class="restaurants example-item" data-test-id="MainRestaurantsListContent">   <!-- class="" -->        
+        <div *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture" class="" 
+        style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
+          &nbsp;
+        </div>  
+        <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture" class="" 
+        style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
+          &nbsp;
+        </div> 
+        <div data-test-id="divRestaurantsDetails" class="restaurants-details" >     <!--   class="restaurants-details" -->
+          שם:{{restaurant.restaurant_details.name}} <br>
+          עיר:{{restaurant.restaurant_details.city}}
+          <br>
+          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails" class="" >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</div>
+          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails" class="" >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></div>
+          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails" class="" >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</div>
+          <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.problems != null" >          
+            <div  *cdkVirtualFor="let problem of restaurant.restaurant_details.restaurant_sanitation.problems " > 
+             <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
+          </div>
+        </div>
+        </div>
+        <div data-test-id="divRestaurantsReports" class="" >    
+        </div>
+      </div>
+      </cdk-virtual-scroll-viewport> 
     `,
-styles: [`
+  styles: [`
+
+.example-viewport {
+  height: 800px;
+  width: 95%;
+  /*border: 1px solid black;*/
+}
+
+.example-item {
+  height: 200px;
+}
+
 html {
     direction: rtl;
 }
@@ -173,7 +188,7 @@ header div.menu-links a, header div.menu-links a:hover, header div.menu-links a:
     color: #192841;
 }
 header div.menu-links a {
-    margin-right: 40px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
@@ -214,8 +229,8 @@ header div.logo {
 }
 
 header div.search {
-    min-width: 240px;    
-    width: 60%;
+    min-width: 110px;    
+    width: 45%;
     display: flex;
     justify-content: center;
 }
@@ -236,33 +251,35 @@ div.restaurants {
     padding: 2px 22px 2px 22px;
     margin-right: 2% ;
 }
+
+
 `
-]
+  ]
 })
 
 export class orestaurantsListComponent {
 
-    public theme = DEFAULT_THEME.ORESTAURANT_NG2_COMPONENTS_THEME;
-    
-    //@Input() searchTerm: string;
-    @Input() searchValue: string;
-    @Input() isSearching: boolean;
-    @Input() showSearchBar = false;
-    @Output() search = new EventEmitter<string>();
+  public theme = DEFAULT_THEME.ORESTAURANT_NG2_COMPONENTS_THEME;
 
-    public showAuth = false;
-       
-    // if service has   searchValue filter by it throw name and city
-    //searchValue : string;
+  //@Input() searchTerm: string;
+  @Input() searchValue: string;
+  @Input() isSearching: boolean;
+  @Input() showSearchBar = false;
+  @Output() search = new EventEmitter<string>();
 
-   
+  public showAuth = false;
 
-   // constructor (@Inject(THEME_TOKEN) public theme: any,
-   //              @Inject(LANG_TOKEN) public lang: any) {
-     // this.showAuth = !theme.disableAuth;
-   // }
-   
-   promiseRestaurants: Promise<restaurant[]>;
+  // if service has   searchValue filter by it throw name and city
+  //searchValue : string;
+
+
+
+  // constructor (@Inject(THEME_TOKEN) public theme: any,
+  //              @Inject(LANG_TOKEN) public lang: any) {
+  // this.showAuth = !theme.disableAuth;
+  // }
+
+  promiseRestaurants: Promise<restaurant[]>;
   public service: RestaurantsListService;
   restaurants: restaurant[] = [];
   errorMessage = '';
@@ -274,28 +291,28 @@ export class orestaurantsListComponent {
   constructor(private ServiceService: RestaurantsListService,
     //private _formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    ) {
-      this.service = ServiceService;
-    }
+  ) {
+    this.service = ServiceService;
+  }
 
-    ngOnInit() {
-      console.log("ngOnInit1->this.searchValue:" + this.searchValue);
-      this.promiseRestaurants = this.service.getRestaurantsWithPromise();
-      this.promiseRestaurants.then(
-        restaurants => this.restaurants = restaurants,
-         error => this.errorMessage = error);
-         console.log("ngOnInit2->this.searchValue:" + this.searchValue);
-     }
-    
-    searchTermChanged(term: string) {
-      console.log('STC', term);
-      this.searchValue = term;
-      //this.href = term;
-    }
+  ngOnInit() {
+    console.log("ngOnInit1->this.searchValue:" + this.searchValue);
+    this.promiseRestaurants = this.service.getRestaurantsWithPromise();
+    this.promiseRestaurants.then(
+      restaurants => this.restaurants = restaurants,
+      error => this.errorMessage = error);
+    console.log("ngOnInit2->this.searchValue:" + this.searchValue);
+  }
 
-    public ngAfterViewInit() {
-      //this.beResponsive();
-      
-    }
-    
+  searchTermChanged(term: string) {
+    console.log('STC', term);
+    this.searchValue = term;
+    //this.href = term;
+  }
+
+  public ngAfterViewInit() {
+    //this.beResponsive();
+
+  }
+
 }
