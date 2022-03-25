@@ -25,11 +25,11 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >      
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
         <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture"  
-          style="width: 460px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
+          style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
           &nbsp;
         </div>  
         <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture"  
-        style="width: 460px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
+        style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
           &nbsp;
         </div> 
         <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
@@ -144,12 +144,12 @@ html {
 }
 
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+   /* max-width: 100%;
+    overflow-x: hidden;*/
 }
 
 body {
-    position: relative;
+    /*position: relative; */
     /*background:url() center center no-repeat;*/
 }
 

@@ -40,12 +40,12 @@ html {
 }
 
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+   /* max-width: 100%;
+    overflow-x: hidden;*/
 }
 
 body {
-    position: relative;
+/*    position: relative; */
     /*background:url() center center no-repeat;*/
 }
 
