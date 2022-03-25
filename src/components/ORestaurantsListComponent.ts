@@ -21,45 +21,122 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 
 @Component({
   selector: 'orestaurants-list',
-  template: `
+  template: `    
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >      
-      <div *cdkVirtualFor="let restaurant of restaurants |filter:searchValue "  class="restaurants example-item" data-test-id="MainRestaurantsListContent">   <!-- class="" -->        
-        <div *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture" class="" 
-        style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
+      <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
+        <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture"  
+          style="width: 460px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
           &nbsp;
         </div>  
-        <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture" class="" 
-        style="width: 335px;height: 110px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
+        <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture"  
+        style="width: 460px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
           &nbsp;
         </div> 
-        <div data-test-id="divRestaurantsDetails" class="restaurants-details" >     <!--   class="restaurants-details" -->
-          שם:{{restaurant.restaurant_details.name}} <br>
-          עיר:{{restaurant.restaurant_details.city}}
-          <br>
-          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails" class="" >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</div>
-          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails" class="" >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></div>
-          <div  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails" class="" >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</div>
+        <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
+          <h3 class="restaurant-name">{{restaurant.restaurant_details.name}} <br> </h3>
+          <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.restaurant_details.city}}<br><br></p>
+          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</span><br>
+          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
+          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails"  >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</span>
+        </div>
+        <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >            
           <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.problems != null" >          
             <div  *cdkVirtualFor="let problem of restaurant.restaurant_details.restaurant_sanitation.problems " > 
              <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
           </div>
         </div>
         </div>
-        <div data-test-id="divRestaurantsReports" class="" >    
-        </div>
       </div>
-      </cdk-virtual-scroll-viewport> 
+      </cdk-virtual-scroll-viewport>       
     `,
   styles: [`
-
 .example-viewport {
   height: 800px;
   width: 95%;
   /*border: 1px solid black;*/
+  display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 3fr));
+    gap: 4rem; 
+}
+.example-item {
+  height: 400px;  
+
+  display: grid;
+    grid-template-columns: repeat(3, minmax(0px, 3fr));
+    gap: 4rem; 
+}
+div.restaurants-body {
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
+    /*display: inline-block;*/
+    vertical-align: middle;
+    
+
+   /* display: flex;*/
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    white-space: nowrap;
+    padding: 1rem;
+    position: relative;
+}
+div.restaurants-root {
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
+    display: inline-block;
+    vertical-align: middle;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 2px 22px 2px 22px;
+    margin-right: 2% ;
+
+
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 6%) 0px 0px 0.125rem 0px, rgb(0 0 0 / 12%) 0px 0.125rem 0.125rem 0px;
+    transition: box-shadow 0.3s ease-in-out 0s, background 100ms ease-out 0s;
+    
+
+}
+div.restaurants-header {
+  z-index: 0;
+    position: relative;
+    -webkit-mask-image: -webkit-radial-gradient(center, rgb(255, 255, 255), rgb(32, 33, 37));
+    border-radius: 0.5rem 0.5rem 0px 0px;
+    overflow: hidden;
+}
+div.restaurants-footer {
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 4rem;
+    border-top: 0.0625rem dashed rgba(32, 33, 37, 0.12);
+    font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-style: normal;
+    font-stretch: normal;
+    text-transform: none;
+    font-weight: 400;
+    color: rgba(32, 33, 37, 0.64);
+    padding: 0px 1rem;
 }
 
-.example-item {
-  height: 200px;
+.restaurant-name {
+    font-feature-settings: "kern";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-style: normal;
+    font-stretch: normal;
+    text-transform: none;
+    font-weight: 500;
 }
 
 html {
@@ -235,22 +312,7 @@ header div.search {
     justify-content: center;
 }
 
-div.restaurants-details {
-    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
-    display: inline-block;
-    vertical-align: middle;
-    align-items: center;
-}
-div.restaurants {
-    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
-    display: inline-block;
-    vertical-align: middle;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    padding: 2px 22px 2px 22px;
-    margin-right: 2% ;
-}
+
 
 
 `
