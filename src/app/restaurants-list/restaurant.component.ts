@@ -11,9 +11,11 @@ export class restaurant   {
     category: string;
     city : string;
     id : number;
-    lastupdate : string;
+    dateOfReport : string;
     mahuiot : string;
-    name : string;        
+    name : string;
+    reportRemarks : string;
+    hasLicense : string;
     taarichKabalatRishayon : number;
     taarichTashlum : number;
     taarichTokef : number;

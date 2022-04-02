@@ -24,24 +24,25 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
   template: `    
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >      
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
-        <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation == null"  data-test-id="divRestaurantsPicture"  
+        <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"  
           style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
           &nbsp;
         </div>  
-        <div class="restaurants-header" *ngIf="restaurant.restaurant_details.restaurant_sanitation != null"  data-test-id="divRestaurantsPicture"  
+        <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"  
         style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
           &nbsp;
         </div> 
         <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
-          <h3 class="restaurant-name">{{restaurant.restaurant_details.name}} <br> </h3>
-          <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.restaurant_details.city}}<br><br></p>
-          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportDate != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח עדכני לתאריך:{{restaurant.restaurant_details.restaurant_sanitation.reportDate}}</span><br>
-          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_details.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-          <span  *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.sanitationStatus != null"  data-test-id="divRestaurantsSanitationDetails"  >סטטוס:{{restaurant.restaurant_details.restaurant_sanitation.sanitationStatus}}</span>
+          <h3 class="restaurant-name">{{restaurant.name}} <br> </h3>
+          <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}<br><br></p>
+          <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח עדכני לתאריך:{{restaurant.dateOfReport}}</span><br>
+          <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
+          <span  *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >סטטוס:{{restaurant.reportRemarks}}</span><br>
+          <span  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  >רישיון סטטוס:{{restaurant.hasLicense}}</span>
         </div>
         <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >            
-          <div *ngIf="restaurant.restaurant_details.restaurant_sanitation != null && restaurant.restaurant_details.restaurant_sanitation.problems != null" >          
-            <div  *cdkVirtualFor="let problem of restaurant.restaurant_details.restaurant_sanitation.problems " > 
+          <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >          
+            <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " > 
              <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
           </div>
         </div>
