@@ -35,10 +35,11 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
         <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
           <h3 class="restaurant-name">{{restaurant.name}} <br> </h3>
           <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}<br><br></p>
-          <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח עדכני לתאריך:{{restaurant.dateOfReport}}</span><br>
+          <span  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
+          <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
           <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-          <span  *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >סטטוס:{{restaurant.reportRemarks}}</span><br>
-          <span  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  >רישיון סטטוס:{{restaurant.hasLicense}}</span>
+          <span  *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}</span><br>
+          
         </div>
         <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >            
           <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >          
