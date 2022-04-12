@@ -81,6 +81,7 @@ div.restaurants-body {
     white-space: nowrap;
     padding: 1rem;
     position: relative;
+    max-width:230px;
 }
 div.restaurants-root {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/

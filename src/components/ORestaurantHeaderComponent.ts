@@ -202,8 +202,8 @@ header div.logo {
 }
 
 header div.search {
-    min-width: 240px;    
-    width: 60%;
+    /*min-width: 240px;    */
+    width: 25%;
     display: flex;
     justify-content: center;
 }
