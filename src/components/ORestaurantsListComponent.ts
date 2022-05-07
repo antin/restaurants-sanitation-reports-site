@@ -35,10 +35,10 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
         <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
           <h3 class="restaurant-name">{{restaurant.name}} <br> </h3>
           <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}<br><br></p>
-          <span  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
+          <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) };"  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
           <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
           <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-          <span  *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}</span><br>
+          <span title="סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}</span><br>
           
         </div>
         <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >            
@@ -67,12 +67,15 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     grid-template-columns: repeat(3, minmax(0px, 3fr));
     gap: 4rem; 
 }
+restaurants-body 
+{
+  span:hover:after { content: attr(title) };
+}
 div.restaurants-body {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
     /*display: inline-block;*/
     vertical-align: middle;
     
-
    /* display: flex;*/
     -webkit-box-pack: justify;
     justify-content: space-between;
