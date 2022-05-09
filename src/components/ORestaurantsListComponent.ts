@@ -21,35 +21,35 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 
 @Component({
   selector: 'orestaurants-list',
-  template: `    
-    <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >      
+  template: `
+    <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
-        <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"  
+        <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"
           style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
           &nbsp;
-        </div>  
-        <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"  
+        </div>
+        <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"
         style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
           &nbsp;
-        </div> 
-        <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >     
+        </div>
+        <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
           <h3 class="restaurant-name">{{restaurant.name}} <br> </h3>
           <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}<br><br></p>
-          <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) };"  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
+          <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
           <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
           <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
           <span title="סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}</span><br>
-          
+
         </div>
-        <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >            
-          <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >          
-            <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " > 
+        <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >
+          <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >
+            <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " >
              <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
           </div>
         </div>
         </div>
       </div>
-      </cdk-virtual-scroll-viewport>       
+      </cdk-virtual-scroll-viewport>
     `,
   styles: [`
 .example-viewport {
@@ -58,16 +58,16 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
   /*border: 1px solid black;*/
   display: grid;
     grid-template-columns: repeat(3, minmax(0px, 3fr));
-    gap: 4rem; 
+    gap: 4rem;
 }
 .example-item {
-  height: 400px;  
+  height: 400px;
 
   display: grid;
     grid-template-columns: repeat(3, minmax(0px, 3fr));
-    gap: 4rem; 
+    gap: 4rem;
 }
-restaurants-body 
+restaurants-body
 {
   span:hover:after { content: attr(title) };
 }
@@ -75,7 +75,7 @@ div.restaurants-body {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
     /*display: inline-block;*/
     vertical-align: middle;
-    
+
    /* display: flex;*/
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -102,7 +102,7 @@ div.restaurants-root {
     background-color: rgb(255, 255, 255);
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 0.125rem 0px, rgb(0 0 0 / 12%) 0px 0.125rem 0.125rem 0px;
     transition: box-shadow 0.3s ease-in-out 0s, background 100ms ease-out 0s;
-    
+
 
 }
 div.restaurants-header {
@@ -276,9 +276,9 @@ header div.menu-links a {
 }
 
 header div.menu-links {
-     
+
     white-space: nowrap;
-    display: -webkit-box;    
+    display: -webkit-box;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-orient: horizontal;
@@ -286,7 +286,7 @@ header div.menu-links {
     flex-flow: row-reverse;
     -webkit-box-pack: left;
     justify-content: left;
-    
+
 }
 header {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
@@ -312,7 +312,7 @@ header div.logo {
 }
 
 header div.search {
-    min-width: 110px;    
+    min-width: 110px;
     width: 45%;
     display: flex;
     justify-content: center;
@@ -367,7 +367,8 @@ export class orestaurantsListComponent {
     console.log("ngOnInit1->this.searchValue:" + this.searchValue);
     this.promiseRestaurants = this.service.getRestaurantsWithPromise();
     this.promiseRestaurants.then(
-      restaurants => this.restaurants = restaurants,
+      //https://stackoverflow.com/questions/51194830/sort-array-of-object-by-object-field-in-angular-6
+      restaurants => this.restaurants = restaurants.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),
       error => this.errorMessage = error);
     console.log("ngOnInit2->this.searchValue:" + this.searchValue);
   }
