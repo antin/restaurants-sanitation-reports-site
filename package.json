@@ -6,6 +6,7 @@
     "update ": "npm update",
     "start": "ng serve",
     "build": "ng build",
+    "build4publish": "ng build --base-href /restaurants-sanitation-reports-site/",
     "publish": "git add . && git commit -m \"publis version\" && git push ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
