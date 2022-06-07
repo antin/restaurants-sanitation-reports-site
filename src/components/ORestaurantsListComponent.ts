@@ -38,7 +38,8 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
           <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
           <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
           <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-          <span title="סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס בדיקת תברואה:{{ restaurant.reportRemarks}}</span><br>
+          <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר:{{ restaurant.reportSummary}}</span><br>
+          <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >הרחבה:{{ restaurant.reportRemarks}}</span><br>
 
         </div>
         <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >

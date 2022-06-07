@@ -14,6 +14,7 @@ export class restaurant   {
     dateOfReport : string;
     mahuiot : string;
     name : string;
+    reportSummary : string;
     reportRemarks : string;
     hasLicense : string;
     taarichKabalatRishayon : number;
