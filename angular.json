@@ -22,6 +22,7 @@
             "assets": [
               "src/favicon.ico",
               //{"glob":"src/index.html","input": "./","output": "404.html"},
+              //{"cp" : "src/index.html","404.html"},
               "src/assets"
             ],
             "styles": [
