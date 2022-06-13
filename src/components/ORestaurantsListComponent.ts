@@ -24,46 +24,36 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
   template: `
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
-        <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"
-          style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >
-          &nbsp;
-        </div>
-        <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"
-        style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >
-          &nbsp;
-        </div>
-        <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
-          <h3 class="restaurant-name">{{restaurant.name}} <br> </h3>
-          <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}<br><br></p>
-          <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
-          <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
-          <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-          <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר:{{ restaurant.reportSummary}}</span><br>
-          <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >הרחבה:{{ restaurant.reportRemarks}}</span><br>
-
-        </div>
-        <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >
-          <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >
-            <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " >
-             <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"
+            style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
+          </div>
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"
+          style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
+          </div>
+          <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
+            <h3 class="restaurant-name">{{restaurant.name}}  </h3>
+            <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}</p>
+            <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
+            <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
+            <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
+            <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר:{{ restaurant.reportSummary}}</span><br>
+            <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >הרחבה:{{ restaurant.reportRemarks}}</span><br>
+          </div>
+          <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >
+            <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >
+              <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " >
+              <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
+            </div>
           </div>
         </div>
-        </div>
       </div>
-      </cdk-virtual-scroll-viewport>
+    </cdk-virtual-scroll-viewport>
     `,
   styles: [`
 .example-viewport {
   height: 800px;
-  width: 95%;
+  /*width: 95%;
   /*border: 1px solid black;*/
-  display: grid;
-    grid-template-columns: repeat(3, minmax(0px, 3fr));
-    gap: 4rem;
-}
-.example-item {
-  height: 400px;
-
   display: grid;
     grid-template-columns: repeat(3, minmax(0px, 3fr));
     gap: 4rem;
@@ -94,16 +84,15 @@ div.restaurants-root {
     align-items: center;
     align-content: center;
     text-align: center;
-    padding: 2px 22px 2px 22px;
-    margin-right: 2% ;
+    padding: 2px 2px 2px 2px;
+    margin: 1% 2% 0 0;
 
-
+    will-change: transform;
     overflow: hidden;
     border-radius: 0.5rem;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgb(0 0 0 / 6%) 0px 0px 0.125rem 0px, rgb(0 0 0 / 12%) 0px 0.125rem 0.125rem 0px;
-    transition: box-shadow 0.3s ease-in-out 0s, background 100ms ease-out 0s;
-
+    box-shadow: rgb(0 0 0 / 6%) 0px 0px 0.325rem 0px, rgb(0 0 0 / 12%) 0px 0.325rem 0.325rem 0px;
+    transition: box-shadow 0.3s cubic-bezier(0.45, 0, 0.55, 1) 0s, background 100ms ease-out 0s;
 
 }
 div.restaurants-header {
@@ -112,6 +101,7 @@ div.restaurants-header {
     -webkit-mask-image: -webkit-radial-gradient(center, rgb(255, 255, 255), rgb(32, 33, 37));
     border-radius: 0.5rem 0.5rem 0px 0px;
     overflow: hidden;
+    margin: auto;
 }
 div.restaurants-footer {
   display: flex;

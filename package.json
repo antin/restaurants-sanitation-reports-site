@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "update ": "npm update",
-    "start": "ng serve",
+    "start": "ng build --output-hashing=all && ng serve",
     "build": "ng build",
     "build4publishUbuntu": "ng build --base-href /restaurants-sanitation-reports-site/ && cp src/index.html docs/404.html ",
     "build4publishWindows": "ng build --base-href /restaurants-sanitation-reports-site/ &&  copy src\\index.html docs\\404.html ",
