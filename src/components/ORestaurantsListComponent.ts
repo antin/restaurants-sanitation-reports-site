@@ -24,27 +24,31 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
   template: `
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
-          <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null"  data-test-id="divRestaurantsPicture"
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null && restaurant.reportSummary != 'טובה' "  data-test-id="divRestaurantsPicture"
             style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
           </div>
-          <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsPicture"
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null && restaurant.reportSummary != 'טובה'"  data-test-id="divRestaurantsPicture"
           style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
           </div>
-          <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
-            <h3 class="restaurant-name">{{restaurant.name}}  </h3>
-            <p class="VenueCardBody__Description-sc-wo56v9-8 VenueCardBody__DesktopDescription-sc-wo56v9-10 ZxGuT cBxKzr" >{{restaurant.city}}</p>
-            <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span><br>
-            <span  *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח תברואה לתאריך:{{restaurant.dateOfReport}}</span><br>
-            <span  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></span><br>
-            <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר:{{ restaurant.reportSummary}}</span><br>
-            <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  >הרחבה:{{ restaurant.reportRemarks}}</span><br>
+          <div class="restaurants-header" *ngIf="restaurant.reportSummary == 'טובה' "  data-test-id="divRestaurantsPicture"
+          style="width: 230px;height: 230px; background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Buffet_Germany.jpg/173px-Buffet_Germany.jpg');" >&nbsp;
           </div>
+          
+          <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
+            <h2 class="restaurant-name">{{restaurant.name}}  </h2>
+            <h3 class="" >{{restaurant.city}}</h3>
+            <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span>
+            <p *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח לתאריך:{{restaurant.dateOfReport}}</p>
+            <p  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></p>
+            <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר דוח תברואה:{{ restaurant.reportSummary}}</span>
+            </div>
           <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >
+            <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  ><b>בהרחבה:</b>{{ restaurant.reportRemarks}}</span>          
             <div *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.problems != null" >
               <div  *cdkVirtualFor="let problem of restaurant.restaurant_sanitation.problems " >
               <div data-test-id="divRestaurantsSanitationDetails" class="" >בעיות שדווחו:{{problem}}</div>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </cdk-virtual-scroll-viewport>
@@ -104,10 +108,10 @@ div.restaurants-header {
     margin: auto;
 }
 div.restaurants-footer {
-  display: flex;
+    /*display: flex;*/
     -webkit-box-align: center;
     align-items: center;
-    height: 4rem;
+    
     border-top: 0.0625rem dashed rgba(32, 33, 37, 0.12);
     font-feature-settings: "kern";
     -webkit-font-smoothing: antialiased;
@@ -120,20 +124,15 @@ div.restaurants-footer {
     text-transform: none;
     font-weight: 400;
     color: rgba(32, 33, 37, 0.64);
-    padding: 0px 1rem;
+    padding: 3px ;
+    margin: 3px ;
+    min-height: 4rem;
+    max-height:4rem;    
+    max-width:230px;
 }
 
 .restaurant-name {
-    font-feature-settings: "kern";
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    font-style: normal;
-    font-stretch: normal;
-    text-transform: none;
-    font-weight: 500;
+    
 }
 
 html {
