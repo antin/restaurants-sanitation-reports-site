@@ -35,12 +35,12 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
           </div>
           
           <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
-            <h2 class="restaurant-name">{{restaurant.name}}  </h2>
-            <h3 class="" >{{restaurant.city}}</h3>
-            <span title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  *ngIf="restaurant.hasLicense != null"  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span>
-            <p *ngIf="restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח לתאריך:{{restaurant.dateOfReport}}</p>
-            <p  *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></p>
-            <span title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר דוח תברואה:{{ restaurant.reportSummary}}</span>
+            <h2 class="restaurant-name">{{restaurant.name}} &nbsp; </h2>
+            <h3 class="restaurant-city" >{{restaurant.city}} &nbsp; </h3>
+            <span class="restaurant-license" title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</span>
+            <p *ngIf="true ||restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  >דוח לתאריך:{{restaurant.dateOfReport}}</p>
+            <p class="restaurant-license" *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></p>
+            <span class="restaurant-license" title="תקציר דוח תברואה:{{ restaurant.reportSummary}}"  *ngIf="restaurant.reportSummary != null"  data-test-id="divRestaurantsSanitationDetails"  >תקציר דוח תברואה:{{ restaurant.reportSummary}}</span>
             </div>
           <div class="restaurants-footer" data-test-id="divRestaurantsReports"  >
             <span title="דוח תברואה בהרחבה:{{ restaurant.reportRemarks}}" style="span:hover:after { content: attr(title) };" *ngIf="restaurant.reportRemarks != null"  data-test-id="divRestaurantsSanitationDetails"  ><b>בהרחבה:</b>{{ restaurant.reportRemarks}}</span>          
@@ -132,9 +132,15 @@ div.restaurants-footer {
 }
 
 .restaurant-name {
-    
+  min-height: 13px;
 }
-
+.restaurant-city {
+  min-height: 10px;
+  }
+.restaurant-license{
+  min-height: 8px;
+  }
+  
 html {
     direction: rtl;
 }
