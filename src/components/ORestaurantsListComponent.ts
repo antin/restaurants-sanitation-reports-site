@@ -24,13 +24,13 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
   template: `
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
-          <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null && restaurant.reportSummary != 'טובה' "  data-test-id="divRestaurantsPicture"
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null && !reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
             style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
           </div>
-          <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null && restaurant.reportSummary != 'טובה'"  data-test-id="divRestaurantsPicture"
+          <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null && !reportSummaryIsGood(restaurant.reportSummary)"  data-test-id="divRestaurantsPicture"
           style="width: 230px;height: 230px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
           </div>
-          <div class="restaurants-header" *ngIf="restaurant.reportSummary == 'טובה' "  data-test-id="divRestaurantsPicture"
+          <div class="restaurants-header" *ngIf="reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
           style="width: 230px;height: 230px; background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Buffet_Germany.jpg/173px-Buffet_Germany.jpg');" >&nbsp;
           </div>
           
@@ -369,6 +369,21 @@ export class orestaurantsListComponent {
     console.log("ngOnInit2->this.searchValue:" + this.searchValue);
   }
 
+  reportSummaryIsGood(reportSummary: string)
+  {
+    if(reportSummary == 'טובה')
+      return true;
+    if(reportSummary == 'טובה מאוד')
+      return true;      
+    if(reportSummary == 'תקין')
+      return true;
+    if(reportSummary == 'ליקוים תוקנו')
+      return true;
+      
+
+
+    return false;
+  }
   searchTermChanged(term: string) {
     console.log('STC', term);
     this.searchValue = term;
