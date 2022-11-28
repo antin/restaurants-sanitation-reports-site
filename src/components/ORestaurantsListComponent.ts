@@ -35,7 +35,7 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
           </div>
           
           <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
-            <h2 class="restaurant-name">{{restaurant.name}} &nbsp; | {{restaurant.city}}</h2>            
+            <h2 class="restaurant-name" title="שם מסעדה ועיר:{{restaurant.name}} &nbsp; | {{restaurant.city}}" >{{restaurant.name}} &nbsp; | {{restaurant.city}}</h2>            
             <p class="restaurant-license" title="סטטוס רישיון:{{restaurant.hasLicense}}" style="span:hover:after { content: attr(title) }; "  data-test-id="divRestaurantsSanitationDetails"  > סטטוס רישיון:{{restaurant.hasLicense}}</p>
             <p class="restaurant-license" *ngIf="restaurant.restaurant_sanitation != null && restaurant.restaurant_sanitation.reportPdfUrl != null"  data-test-id="divRestaurantsSanitationDetails"  >קישור לדוח תברואה עדכני <a target="_blank" href="{{restaurant.restaurant_sanitation.reportPdfUrl}}">כאן.</a></p>
             <span *ngIf="true ||restaurant.dateOfReport != null"  data-test-id="divRestaurantsSanitationDetails"  > |{{restaurant.dateOfReport | date:'shortDate'}}| </span>
@@ -54,7 +54,7 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     `,
   styles: [`
 .example-viewport {
-  height: 800px;
+  height: 1100px;
   /*width: 95%;
   /*border: 1px solid black;*/
   display: grid;
