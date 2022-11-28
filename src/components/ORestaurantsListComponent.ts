@@ -78,7 +78,8 @@ div.restaurants-body {
     white-space: nowrap;
     padding: 3px 16px 6px 16px;
     position: relative;
-    max-width:360px;
+    max-width:330px;
+    line-height: 0.6rem;
 }
 div.restaurants-root {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
@@ -125,16 +126,16 @@ div.restaurants-footer {
     color: rgba(32, 33, 37, 0.64);
     padding: 3px ;
     margin: 3px ;
-    min-height: 4rem;
+    min-height: 1rem;
     max-height:4rem;    
     max-width:360px;
 }
 
 .restaurant-name {
-  min-height: 13px;
+  min-height: 10px;
 }
 .restaurant-city {
-  min-height: 10px;
+  min-height: 9px;
   }
 .restaurant-license{
   min-height: 8px;
