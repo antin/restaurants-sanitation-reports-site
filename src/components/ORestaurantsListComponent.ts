@@ -25,13 +25,13 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
           <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null && !reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
-            style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
+            style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
           </div>
           <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null && !reportSummaryIsGood(restaurant.reportSummary)"  data-test-id="divRestaurantsPicture"
-          style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
+          style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
           </div>
           <div class="restaurants-header" *ngIf="reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
-          style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/173px-Buffet_Germany.jpg');" >&nbsp;
+          style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/173px-Buffet_Germany.jpg');" >&nbsp;
           </div>
           
           <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
@@ -67,7 +67,7 @@ restaurants-body
 }
 div.restaurants-body {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
-    /*display: inline-block;*/
+    /*display: inline-block;*/    
     vertical-align: middle;
 
    /* display: flex;*/
@@ -76,13 +76,14 @@ div.restaurants-body {
     -webkit-box-align: center;
     align-items: center;
     white-space: nowrap;
-    padding: 3px 16px 6px 16px;
+    padding: 3px 6px 6px 6px;
     position: relative;
     max-width:330px;
     line-height: 0.6rem;
 }
 div.restaurants-root {
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow*/
+    /*display: inline-block;*/
     display: inline-block;
     vertical-align: middle;
     align-items: center;
@@ -122,13 +123,13 @@ div.restaurants-footer {
     font-style: normal;
     font-stretch: normal;
     text-transform: none;
-    font-weight: 400;
+    /*font-weight: 400;*/
     color: rgba(32, 33, 37, 0.64);
     padding: 3px ;
     margin: 3px ;
     min-height: 1rem;
     max-height:4rem;    
-    max-width:360px;
+    max-width:330px;
 }
 
 .restaurant-name {
