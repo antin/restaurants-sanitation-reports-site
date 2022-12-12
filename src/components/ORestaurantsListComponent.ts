@@ -25,13 +25,13 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     <cdk-virtual-scroll-viewport itemSize="15" class="example-viewport" >
       <div class="restaurants-root" *cdkVirtualFor="let restaurant of restaurants |filter:searchValue " data-test-id="MainRestaurantsListContent">
           <div class="restaurants-header" *ngIf="restaurant.reportRemarks == null && !reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
-            style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
+            style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/w09.gif');" >&nbsp;
           </div>
           <div class="restaurants-header" *ngIf="restaurant.reportRemarks != null && !reportSummaryIsGood(restaurant.reportSummary)"  data-test-id="divRestaurantsPicture"
-          style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
+          style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/35_Hotel_Icon_Has_Restaurant.gif');" >&nbsp;
           </div>
           <div class="restaurants-header" *ngIf="reportSummaryIsGood(restaurant.reportSummary) "  data-test-id="divRestaurantsPicture"
-          style="width: 360px;height: 115px; background-image:url('{{theme.siteUrl}}assets/173px-Buffet_Germany.jpg');" >&nbsp;
+          style="width: 355px;height: 115px; background-image:url('{{theme.siteUrl}}assets/173px-Buffet_Germany.jpg');" >&nbsp;
           </div>
           
           <div class="restaurants-body" data-test-id="divRestaurantsDetails"  >
