@@ -4,8 +4,8 @@ import '../polyfills';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+//import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {MAT_LEGACY_FORM_FIELD_DEFAULT_OPTIONS as MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/legacy-form-field';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,20 +22,20 @@ import { MatIconModule } from '@angular/material/icon';
 //import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import { MatStepperModule } from '@angular/material/stepper';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatLegacySliderModule as MatSliderModule } from '@angular/material/legacy-slider';
+import { MatLegacyFormFieldModule as MatFormFieldModule} from '@angular/material/legacy-form-field';
+import {MatLegacyInputModule as MatInputModule} from '@angular/material/legacy-input';
 
 
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-//import { MAT_CHECKBOX_CLICK_ACTION } from '@angular/material/checkbox';
+//import { MAT_CHECKBOX_CLICK_ACTION } from '@angular/material/legacy-checkbox';
 //import { HttpModule } from '@angular/http';
 
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
+//import {MatLegacyCheckboxModule as MatCheckboxModule} from '@angular/material/checkbox';
+import {MatLegacyRadioModule as MatRadioModule} from '@angular/material/legacy-radio';
+import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
 import {Component} from '@angular/core';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatDatepicker} from '@angular/material/datepicker';
@@ -98,7 +98,7 @@ export const MY_FORMATS = {
     ],
   providers: [    
     AppComponent,
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
+    //{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
   bootstrap: [AppComponent],
   
