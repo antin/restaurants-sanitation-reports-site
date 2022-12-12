@@ -11,7 +11,7 @@ import {
   OnInit,
   HostListener
 } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { restaurant } from 'src/app/restaurants-list/restaurant.component';
 import { RestaurantsListService } from 'src/app/restaurants-list/restaurants-list.service';
@@ -349,7 +349,7 @@ export class orestaurantsListComponent {
   restaurants: restaurant[] = [];
   errorMessage = '';
   data: any;
-  EmpForm: FormGroup;
+  EmpForm: UntypedFormGroup;
   submitted = false;
   EventValue: any = "Save";
 

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {UntypedFormGroup} from '@angular/forms';
 import {RestaurantsListService} from './restaurants-list.service';
 //import { CDK_DESCRIBEDBY_ID_PREFIX } from '@angular/cdk/a11y';
 
@@ -91,7 +91,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   */
   errorMessage = '';
   data: any;
-  EmpForm: FormGroup;
+  EmpForm: UntypedFormGroup;
   submitted = false;
   EventValue: any = "Save";
 
