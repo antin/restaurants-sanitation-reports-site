@@ -127,8 +127,8 @@ div.restaurants-footer {
     color: rgba(32, 33, 37, 0.64);
     padding: 3px ;
     margin: 3px ;
-    min-height: 1rem;
-    max-height:4rem;    
+    min-height: 2rem;
+    max-height: 2rem;    
     max-width:330px;
 }
 
