@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
+import { AboutComponent } from './about/about.component';
 
 
 const appRoutes: Routes = [  
-  {      path: '',component: RestaurantsListComponent  }
-
+  {path: '',                  component: RestaurantsListComponent  },
+  {path: 'restaurants-list',  component: RestaurantsListComponent},
+  {path: 'about',             component: AboutComponent}
 ]
 
 
