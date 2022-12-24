@@ -3,7 +3,7 @@ import { HttpClient,HttpHeaders, HttpParams }    from '@angular/common/http';
 import {  restaurant } from './restaurant.component';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
-
+import RestaurantJson from './../../data/restaurant.json';
 
 
 @Injectable({
@@ -30,10 +30,14 @@ constructor(private http: HttpClient) {
   }
 
  //  https://www.concretepage.com/angular-2/angular-2-http-get-example
-  public getRestaurantsWithPromise() {    
-    return this.http.get(this.url).toPromise()
+  public getRestaurantsWithPromise() : restaurant[] {    
+    /*return this.http.get(this.url).toPromise()
         .then(this.extractData)
         .catch(this.handleErrorPromise);
+        */
+        //src\data\restaurant.json
+        //console.log("RestaurantJson:" + RestaurantJson);
+        return RestaurantJson;
 }
 // https://codingbootcamps.io/resources/observables-vs-promises-whats-the-difference/
 public getRestaurantsWithObservable() {

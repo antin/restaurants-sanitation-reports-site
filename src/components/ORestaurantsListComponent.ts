@@ -344,7 +344,7 @@ export class orestaurantsListComponent {
   // this.showAuth = !theme.disableAuth;
   // }
 
-  promiseRestaurants: Promise<restaurant[]>;
+  promiseRestaurants: restaurant[];//Promise
   public service: RestaurantsListService;
   restaurants: restaurant[] = [];
   errorMessage = '';
@@ -363,10 +363,12 @@ export class orestaurantsListComponent {
   ngOnInit() {
     console.log("ngOnInit1->this.searchValue:" + this.searchValue);
     this.promiseRestaurants = this.service.getRestaurantsWithPromise();
-    this.promiseRestaurants.then(
+    /*this.promiseRestaurants.then(
       //https://stackoverflow.com/questions/51194830/sort-array-of-object-by-object-field-in-angular-6
       restaurants => this.restaurants = restaurants.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),
-      error => this.errorMessage = error);
+      error => this.errorMessage = error);*/
+    
+    this.restaurants = this.promiseRestaurants.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),    
     console.log("ngOnInit2->this.searchValue:" + this.searchValue);
   }
 
