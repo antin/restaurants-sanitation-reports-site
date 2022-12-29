@@ -19,7 +19,7 @@ canvas.field-form {
 
 #form-wrapper {
     position: relative;
-    user-select: none;
+    /*user-select: none;*/
 }
 
     #form-wrapper img {

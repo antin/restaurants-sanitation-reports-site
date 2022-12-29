@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RestaurantsListComponent } from './restaurants-list/restaurants-list.component';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './modules/about/pagse/about.component';
 
 
 const appRoutes: Routes = [  

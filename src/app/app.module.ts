@@ -36,10 +36,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 //import {MatLegacyCheckboxModule as MatCheckboxModule} from '@angular/material/checkbox';
 import {MatLegacyRadioModule as MatRadioModule} from '@angular/material/legacy-radio';
 import {MatLegacySelectModule as MatSelectModule} from '@angular/material/legacy-select';
-import {Component} from '@angular/core';
+import {Component, isDevMode} from '@angular/core';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatDatepicker} from '@angular/material/datepicker';
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './modules/about/pagse/about.component';
 import { orestaurantHeaderComponent } from 'src/components/ORestaurantHeaderComponent';
 import { orestaurantsListComponent } from 'src/components/ORestaurantsListComponent';
 import { orestaurantFooterComponent } from 'src/components/ORestaurantFooterComponent';
@@ -52,6 +52,7 @@ import { orestaurantFooterComponent } from 'src/components/ORestaurantFooterComp
 //import {GoogleAnalyticsService} from './google-analytics/google-analytics.service';
 //import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export const MY_FORMATS = {
   parse: {
@@ -95,6 +96,12 @@ export const MY_FORMATS = {
       {path: 'restaurants-list', component: RestaurantsListComponent},
       {path: 'about', component: AboutComponent},      
     ]),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     ],
   providers: [    
     AppComponent,
