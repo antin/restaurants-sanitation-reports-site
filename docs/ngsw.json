@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672657571264,
+  "timestamp": 1672661020729,
   "index": "/restaurants-sanitation-reports-site/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/restaurants-sanitation-reports-site/favicon.ico",
         "/restaurants-sanitation-reports-site/index.html",
-        "/restaurants-sanitation-reports-site/main.76476eb16db23c53.js",
+        "/restaurants-sanitation-reports-site/main.c0d8014045c8cacf.js",
         "/restaurants-sanitation-reports-site/manifest.webmanifest",
         "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js",
         "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js",
@@ -28,16 +28,55 @@
       "cacheQueryOptions": {
         "ignoreVary": true
       },
-      "urls": [],
+      "urls": [
+        "/restaurants-sanitation-reports-site/app/assets/173px-Buffet_Germany.jpg",
+        "/restaurants-sanitation-reports-site/app/assets/28133426731_0200741203_w.jpg",
+        "/restaurants-sanitation-reports-site/app/assets/35_Hotel_Icon_Has_Restaurant.gif",
+        "/restaurants-sanitation-reports-site/app/assets/35_Hotel_Icon_Has_Restaurant.png",
+        "/restaurants-sanitation-reports-site/app/assets/640px-Visit_a_Otranto_2013_04.jpg",
+        "/restaurants-sanitation-reports-site/app/assets/Document_Stack_(Resource_Documents)_NH_Icon.png",
+        "/restaurants-sanitation-reports-site/app/assets/bootstrap.rtl.full.min.css",
+        "/restaurants-sanitation-reports-site/app/assets/font-awesome.min.css",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-128x128.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-144x144.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-152x152.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-192x192.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-384x384.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-512x512.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-72x72.png",
+        "/restaurants-sanitation-reports-site/app/assets/icons/icon-96x96.png",
+        "/restaurants-sanitation-reports-site/app/assets/w09.gif",
+        "/restaurants-sanitation-reports-site/app/assets/‏‏35_Hotel_Icon_Has_Restaurant - עותק.gif",
+        "/restaurants-sanitation-reports-site/app/assets/‏‏w09 - עותק.gif"
+      ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
+    "/restaurants-sanitation-reports-site/app/assets/173px-Buffet_Germany.jpg": "7b2e822a5e9ad75c190e4ef8f987c0adfad8d32b",
+    "/restaurants-sanitation-reports-site/app/assets/28133426731_0200741203_w.jpg": "4348efb4b13112b9767ae1278c7ba8afe949241d",
+    "/restaurants-sanitation-reports-site/app/assets/35_Hotel_Icon_Has_Restaurant.gif": "1adbff37c0c49985f4ad0f84b5e670ed17906693",
+    "/restaurants-sanitation-reports-site/app/assets/35_Hotel_Icon_Has_Restaurant.png": "b50f9018169379e5eda0d7004ec3a13bab9017e9",
+    "/restaurants-sanitation-reports-site/app/assets/640px-Visit_a_Otranto_2013_04.jpg": "a60bf21a9025012be5b2bf2c572a781da565242c",
+    "/restaurants-sanitation-reports-site/app/assets/Document_Stack_(Resource_Documents)_NH_Icon.png": "c26923ea3dcd8041c3c9913c40a239fdcdc1237d",
+    "/restaurants-sanitation-reports-site/app/assets/bootstrap.rtl.full.min.css": "2ddf762c95339eaa2812b41b04fa682884c1a1f8",
+    "/restaurants-sanitation-reports-site/app/assets/font-awesome.min.css": "512c7d79033e3028a9be61b540cf1a6870c896f8",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/restaurants-sanitation-reports-site/app/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/restaurants-sanitation-reports-site/app/assets/w09.gif": "cacb5f2883173866cd1cf5cad679480aa21369aa",
+    "/restaurants-sanitation-reports-site/app/assets/‏‏35_Hotel_Icon_Has_Restaurant - עותק.gif": "056f1a0f22c8ce5415a227089f9810f327cdfb78",
+    "/restaurants-sanitation-reports-site/app/assets/‏‏w09 - עותק.gif": "edfd892bc1a3dd08ae178cd0980e24b86bc540ef",
     "/restaurants-sanitation-reports-site/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/restaurants-sanitation-reports-site/index.html": "501347c59783f8b5a8762b6989a0fd20e13d6036",
-    "/restaurants-sanitation-reports-site/main.76476eb16db23c53.js": "3aa4a778dbed6a58be8ed920dc68eee52812d187",
-    "/restaurants-sanitation-reports-site/manifest.webmanifest": "97f64a6bf5c998ae6e2308e64a8e030f49af8768",
+    "/restaurants-sanitation-reports-site/index.html": "389c085c64c964d0b2c5ae442613e66cadc64fa8",
+    "/restaurants-sanitation-reports-site/main.c0d8014045c8cacf.js": "70c209ec84d0d29fc9539d30fbea26071166b329",
+    "/restaurants-sanitation-reports-site/manifest.webmanifest": "2cb2a1208c55ad07d559ea4fc968cdcd99285587",
     "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js": "aec885ad2cd2d09e63827c6351e44776b664e4f0",
     "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js": "6c3310776e320924ef701b69daf3c1a3b744ac8f",
     "/restaurants-sanitation-reports-site/styles.dce0164ba2cbab13.css": "6d517117db3358a85e981a96302a349752337297"

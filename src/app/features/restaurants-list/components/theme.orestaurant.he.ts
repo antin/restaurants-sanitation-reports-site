@@ -23,7 +23,7 @@ export const DEFAULT_THEME =
                 ["all"]
         }],
         "searchPlaceholder": "חפשו הכל... שם מסעדה, עיר, רחוב או כל דבר אחר העולה על דעתכם..",
-        "siteLogo": "assets/35_Hotel_Icon_Has_Restaurant.gif", "siteName": "מסעדה פתוחה",
+        "siteLogo": "app/assets/35_Hotel_Icon_Has_Restaurant.gif", "siteName": "מסעדה פתוחה",
         "siteUrl": ""
     }
 };
