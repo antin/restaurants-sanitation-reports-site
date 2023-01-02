@@ -16,9 +16,9 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 @Component({
     selector: 'orestaurant-header',
     template: `
-          <header>
+          <header aria-label='homepage' >
   <div class="logo">
-    <a [href]="theme.siteUrl"  aria-label='homepage' [style.background-image]='"url(" + theme.siteUrl + theme.siteLogo + ")"'>
+    <a [href]="theme.siteUrl" [style.background-image]='"url(" + theme.siteUrl + theme.siteLogo + ")"'>
     </a>  
   </div>
   <div  *ngIf='showSearchBar'  data-test-id="divRestaurantsSearch" class="search"  >    
