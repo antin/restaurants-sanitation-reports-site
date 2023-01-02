@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import {UntypedFormGroup} from '@angular/forms';
-import {RestaurantsListService} from './restaurants-list.service';
+import {RestaurantsListService} from '../services/restaurants-list.service';
 //import { CDK_DESCRIBEDBY_ID_PREFIX } from '@angular/cdk/a11y';
 
 // https://material.io/resources/icons/?icon=format_list_bulleted&style=baseline
@@ -12,10 +12,10 @@ import { throwError } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
 
-import { restaurant } from './restaurant.component';
+import { restaurant } from '../models/restaurant.model';
 //import { searchValueFilterPipe } from './search-value-filter-pipe';
-import { orestaurantHeaderComponent } from 'src/components/ORestaurantHeaderComponent';
-import { orestaurantsListComponent } from 'src/components/ORestaurantsListComponent';
+import { orestaurantHeaderComponent } from 'src/app/features/restaurants-list/components/ORestaurantHeaderComponent';
+import { orestaurantsListComponent } from 'src/app/features/restaurants-list/components/ORestaurantsListComponent';
 
 declare var gtag;
 

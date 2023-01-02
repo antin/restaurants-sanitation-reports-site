@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders, HttpParams }    from '@angular/common/http';
-import {  restaurant } from './restaurant.component';
+import {  restaurant } from '../models/restaurant.model';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError, map } from 'rxjs/operators';
-import RestaurantJson from './../../data/restaurant.json';
+import RestaurantJson from '../../../../data/restaurant.json';
 
 
 @Injectable({

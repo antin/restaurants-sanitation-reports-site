@@ -13,8 +13,8 @@ import {
 } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { restaurant } from 'src/app/restaurants-list/restaurant.component';
-import { RestaurantsListService } from 'src/app/restaurants-list/restaurants-list.service';
+import { restaurant } from 'src/app/features/restaurants-list/models/restaurant.model';
+import { RestaurantsListService } from 'src/app/features/restaurants-list/services/restaurants-list.service';
 import { DEFAULT_THEME } from './theme.orestaurant.he';
 
 //import {THEME_TOKEN, LANG_TOKEN} from '../constants';
