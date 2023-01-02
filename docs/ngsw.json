@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672661020729,
+  "timestamp": 1672662212008,
   "index": "/restaurants-sanitation-reports-site/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/restaurants-sanitation-reports-site/favicon.ico",
         "/restaurants-sanitation-reports-site/index.html",
-        "/restaurants-sanitation-reports-site/main.c0d8014045c8cacf.js",
+        "/restaurants-sanitation-reports-site/main.e5b1731d9c1090c8.js",
         "/restaurants-sanitation-reports-site/manifest.webmanifest",
         "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js",
         "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js",
@@ -74,9 +74,9 @@
     "/restaurants-sanitation-reports-site/app/assets/‏‏35_Hotel_Icon_Has_Restaurant - עותק.gif": "056f1a0f22c8ce5415a227089f9810f327cdfb78",
     "/restaurants-sanitation-reports-site/app/assets/‏‏w09 - עותק.gif": "edfd892bc1a3dd08ae178cd0980e24b86bc540ef",
     "/restaurants-sanitation-reports-site/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/restaurants-sanitation-reports-site/index.html": "389c085c64c964d0b2c5ae442613e66cadc64fa8",
-    "/restaurants-sanitation-reports-site/main.c0d8014045c8cacf.js": "70c209ec84d0d29fc9539d30fbea26071166b329",
-    "/restaurants-sanitation-reports-site/manifest.webmanifest": "2cb2a1208c55ad07d559ea4fc968cdcd99285587",
+    "/restaurants-sanitation-reports-site/index.html": "c060b1778ebb947d94549895c23abf7de314876b",
+    "/restaurants-sanitation-reports-site/main.e5b1731d9c1090c8.js": "6fc50e140c0221140177825840e1235c98ca00a8",
+    "/restaurants-sanitation-reports-site/manifest.webmanifest": "2ccd254664fd096b10db3cbcd6ac7225f3bb88a3",
     "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js": "aec885ad2cd2d09e63827c6351e44776b664e4f0",
     "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js": "6c3310776e320924ef701b69daf3c1a3b744ac8f",
     "/restaurants-sanitation-reports-site/styles.dce0164ba2cbab13.css": "6d517117db3358a85e981a96302a349752337297"

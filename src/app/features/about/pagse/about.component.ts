@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DEFAULT_THEME } from '../../restaurants-list/components/theme.orestaurant.he';
 
 @Component({
   selector: 'app-about',
@@ -12,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
  */
 export class AboutComponent implements OnInit {
 
+  public theme = DEFAULT_THEME.ORESTAURANT_NG2_COMPONENTS_THEME;
+    
   theme_siteUrl ='';//'https//www.orestaurant.org/';
   theme_siteLogo ='assets/35_Hotel_Icon_Has_Restaurant.gif';
 
