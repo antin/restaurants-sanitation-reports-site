@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672662212008,
+  "timestamp": 1672662580555,
   "index": "/restaurants-sanitation-reports-site/index.html",
   "assetGroups": [
     {
@@ -76,7 +76,7 @@
     "/restaurants-sanitation-reports-site/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "/restaurants-sanitation-reports-site/index.html": "c060b1778ebb947d94549895c23abf7de314876b",
     "/restaurants-sanitation-reports-site/main.e5b1731d9c1090c8.js": "6fc50e140c0221140177825840e1235c98ca00a8",
-    "/restaurants-sanitation-reports-site/manifest.webmanifest": "2ccd254664fd096b10db3cbcd6ac7225f3bb88a3",
+    "/restaurants-sanitation-reports-site/manifest.webmanifest": "6ba47e7e62bc4812adca3de396ec35ecf81bdc85",
     "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js": "aec885ad2cd2d09e63827c6351e44776b664e4f0",
     "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js": "6c3310776e320924ef701b69daf3c1a3b744ac8f",
     "/restaurants-sanitation-reports-site/styles.dce0164ba2cbab13.css": "6d517117db3358a85e981a96302a349752337297"
