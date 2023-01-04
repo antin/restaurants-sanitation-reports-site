@@ -76,7 +76,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   //https://github.com/lathonez/angular2-signaturepad-demo/blob/master/src/app/app.component.ts
 
 
-  @ViewChild('stepper', { static: false }) private myStepper: MatStepper;
+  //@ViewChild('stepper', { static: false }) private myStepper: MatStepper;
 
   /*
   personEssentialDetailsFormGroup = new FormGroup({
