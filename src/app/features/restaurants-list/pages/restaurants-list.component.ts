@@ -17,7 +17,7 @@ import { restaurant } from '../models/restaurant.model';
 import { orestaurantHeaderComponent } from 'src/app/features/restaurants-list/components/ORestaurantHeaderComponent';
 import { orestaurantsListComponent } from 'src/app/features/restaurants-list/components/ORestaurantsListComponent';
 
-declare var gtag;
+declare var gtag: any;
 
 @Component({
   selector: 'app-restaurants-list',
@@ -34,7 +34,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   
  
    // if service has   searchValue filter by it throw name and city
-   searchValue : string;
+   searchValue : string = "";
 
   footerLinks = [
     {
@@ -95,6 +95,12 @@ export class RestaurantsListComponent implements AfterViewInit {
   submitted = false;
   EventValue: any = "Save";
 
+  lat: number;
+  lng: number;
+  zoom: any;
+  origin: any;
+  destination: any
+  
   constructor(private ServiceService: RestaurantsListService,
     //private _formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
@@ -103,8 +109,25 @@ export class RestaurantsListComponent implements AfterViewInit {
     }
 
     ngOnInit() {
-    
-     }
+      this.getUserLocation();
+   }
+
+   getUserLocation() 
+   {
+      if (navigator.geolocation) 
+      {
+        // use api to find the current city? https://gps-coordinates.org/
+       navigator.geolocation.getCurrentPosition(position => {
+           this.lat = position.coords.latitude;
+           this.lng = position.coords.longitude;
+           console.log("User allow,this.lat:" + this.lat + " ;this.lng:" + this.lng)
+         });
+      }
+      else 
+      {
+        console.log("User not allow")
+      }
+    }
    
     searchTermChanged(term: string) {
       console.log('STC', term);
@@ -118,7 +141,7 @@ export class RestaurantsListComponent implements AfterViewInit {
     }
     
 
-  nextClicked(event) {
+  nextClicked(event: any) {
     // complete the current step
     //this.myStepper.selected.completed = true;
     // move to next step
@@ -155,7 +178,7 @@ export class RestaurantsListComponent implements AfterViewInit {
         //  this.googleAnalyticsService.eventEmitter("add_to_cart", "shop", "cart", "click", 10);
       }
 
-  Save(step) {
+  Save(step: any) {
     this.submitted = true;
      
         // https://stackoverflow.com/questions/60508242/pass-the-data-to-next-step-in-component-based-mat-stepper
@@ -165,7 +188,7 @@ export class RestaurantsListComponent implements AfterViewInit {
 
   }
 
-  handleError(error) {
+  handleError(error: { error: string | any[]; status: any; message: any; }) {
     this.hasError = true;
 
     let errorMessage = '';
