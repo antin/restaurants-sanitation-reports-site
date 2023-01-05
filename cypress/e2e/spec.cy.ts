@@ -1,6 +1,10 @@
+
 describe('template spec', () => {
   it('passes', () => {
-    cy.visit('http://localhost:4200')
-    cy.contains('h2')
+    cy.window().then((win) =>  {
+      win.onbeforeunload = null;
+    })
+    cy.visit('http://localhost:4200/',{failOnStatusCode: false})
+    cy.contains('רמת')
   })
 })

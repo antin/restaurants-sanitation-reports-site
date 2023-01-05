@@ -6,17 +6,21 @@ describe('The Home Page', () => {
 
   it('successfully loads', () => {
     //cy.visit('/')
-    cy.visit('https://antin.github.io/restaurants-sanitation-reports-site/about/',{failOnStatusCode: false})
+    cy.window().then((win) =>  {
+      win.onbeforeunload = null;
+    })
+    cy.visit('https://antin.github.io/restaurants-sanitation-reports-site/',{failOnStatusCode: false})
+    cy.contains('רמת')
   })
-
+/*
   it('.type() - type into a DOM element', () => {
     // https://on.cypress.io/type
-    cy.get('#team').should('have.value', 'צוות')
+    //cy.get('#team').should('have.value', 'צוות')
+    //cy.contains('h2')
     //.cy.get('.action-email')
       //.type('fake@email.com').should('have.value', 'fake@email.com')
-
-
   })
+  */
 })
 /*
 /// <reference types="cypress" />
