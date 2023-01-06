@@ -6,7 +6,7 @@
     "update ": "npm update",
     "start": "ng build --output-hashing=all --optimization && ng serve",
     "build": "ng build",
-    "build4publishUbuntu*": "ng build --output-hashing=all --optimization --base-href /restaurants-sanitation-reports-site/ && cp src/index.html docs/404.html ",
+    "build4publishUbuntu": "ng build --output-hashing=all --optimization --base-href /restaurants-sanitation-reports-site/ && cp src/index.html docs/404.html ",
     "build4publishWindows": "ng build --output-hashing=all --optimization --base-href /restaurants-sanitation-reports-site/ &&  copy src\\index.html docs\\404.html ",
     "publish": "git add . && git commit -m \"publis version\" && git push ",
     "watch": "ng build --watch --configuration development",
