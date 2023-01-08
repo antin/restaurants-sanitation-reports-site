@@ -2,45 +2,26 @@ describe('The Home Page', () => {
   beforeEach(() => {
     // reset and seed the database prior to every test
     //cy.exec('npm run db:reset && npm run db:seed')
-  })
-
-  it('successfully loads', () => {
     //cy.visit('/')
     cy.window().then((win) =>  {
       win.onbeforeunload = null;
     })
     cy.visit('https://antin.github.io/restaurants-sanitation-reports-site/',{failOnStatusCode: false})
-    cy.contains('רמת')
-  })
-/*
-  it('.type() - type into a DOM element', () => {
-    // https://on.cypress.io/type
-    //cy.get('#team').should('have.value', 'צוות')
-    //cy.contains('h2')
-    //.cy.get('.action-email')
-      //.type('fake@email.com').should('have.value', 'fake@email.com')
-  })
-  */
-})
-/*
-/// <reference types="cypress" />
-
-context('Actions', () => {
-  beforeEach(() => {
-    //cy.visit('https://antin.github.io/restaurants-sanitation-reports-site/about/',{failOnStatusCode: false})
-    cy.visit('http://localhost:8080/about/')
   })
 
-  // https://on.cypress.io/interacting-with-elements
-
-  it('.type() - type into a DOM element', () => {
-    // https://on.cypress.io/type
-    cy.get('#team').should('have.value', 'צוות')
-    //.cy.get('.action-email')
-      //.type('fake@email.com').should('have.value', 'fake@email.com')
-
-
+  it('check main cities appears', () => {
+    
+    cy.contains('רמת גן')
+    cy.contains('רמת השרון')    
+    cy.contains('ירושלים')
+    //cy.contains('ראשון')//לציון
+    
+    //cy.contains('תל אביב')
+    cy.get('input[id=insRestaurantsSearch]').type('ראשון')
+    cy.contains('ראשון')//לציון
+  })
+  it('check spesific Restaurant appears', () => {          
+    cy.get('input[id=insRestaurantsSearch]').type('שווארמה')
+    cy.contains('שווארמה')//לציון
   })
 })
-*/
-
