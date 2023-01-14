@@ -54,7 +54,7 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
     `,
   styles: [`
 .example-viewport {
-  height: 1100px;
+  height: 740px;
   /*width: 95%;
   /*border: 1px solid black;*/
   display: grid;
@@ -368,7 +368,7 @@ export class orestaurantsListComponent {
       restaurants => this.restaurants = restaurants.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),
       error => this.errorMessage = error);*/
     
-    this.restaurants = this.promiseRestaurants.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),    
+    this.restaurants = this.promiseRestaurants;//.sort((a,b) => a.name != null && a.name.localeCompare(b.name)),    
     console.log("ngOnInit2->this.searchValue:" + this.searchValue);
   }
 

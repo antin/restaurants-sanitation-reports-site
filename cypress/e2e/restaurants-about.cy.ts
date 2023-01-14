@@ -5,7 +5,7 @@ describe('The About Page', () => {
     //cy.visit('/')
     cy.window().then((win) =>  {
       win.onbeforeunload = null;
-    })
+    })    
     cy.visit('https://antin.github.io/restaurants-sanitation-reports-site/about/',{failOnStatusCode: false})
   })
 

@@ -30,15 +30,23 @@ constructor(private http: HttpClient) {
   }
 
  //  https://www.concretepage.com/angular-2/angular-2-http-get-example
-  public getRestaurantsWithPromise() : restaurant[] {    
+public getRestaurantsWithPromise() : restaurant[] {    
     /*return this.http.get(this.url).toPromise()
         .then(this.extractData)
         .catch(this.handleErrorPromise);
         */
         //src\data\restaurant.json
         //console.log("RestaurantJson:" + RestaurantJson);
-        return RestaurantJson;
+        return this.filterRestaurantData(RestaurantJson);
 }
+
+public filterRestaurantData(dataRestaurant: restaurant[]) : restaurant[]
+{
+	return dataRestaurant.filter(object => {
+		return object.id != null && object.name != null && object.name.length > 1;
+	});
+}
+
 // https://codingbootcamps.io/resources/observables-vs-promises-whats-the-difference/
 public getRestaurantsWithObservable() {
   return this.http.get(this.url).pipe(
