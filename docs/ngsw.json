@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1673719431907,
+  "timestamp": 1674329668482,
   "index": "/restaurants-sanitation-reports-site/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/restaurants-sanitation-reports-site/favicon.ico",
         "/restaurants-sanitation-reports-site/index.html",
-        "/restaurants-sanitation-reports-site/main.2a7103dd4f5bd54c.js",
+        "/restaurants-sanitation-reports-site/main.254f365026ac81c0.js",
         "/restaurants-sanitation-reports-site/manifest.webmanifest",
         "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js",
         "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js",
@@ -74,8 +74,8 @@
     "/restaurants-sanitation-reports-site/app/assets/‏‏35_Hotel_Icon_Has_Restaurant - עותק.gif": "056f1a0f22c8ce5415a227089f9810f327cdfb78",
     "/restaurants-sanitation-reports-site/app/assets/‏‏w09 - עותק.gif": "edfd892bc1a3dd08ae178cd0980e24b86bc540ef",
     "/restaurants-sanitation-reports-site/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/restaurants-sanitation-reports-site/index.html": "44de5426d2b68fa476953daf9dc0d584d2990ea0",
-    "/restaurants-sanitation-reports-site/main.2a7103dd4f5bd54c.js": "85149c14c6408bf3d814aebe2daeb0c3df4e6e54",
+    "/restaurants-sanitation-reports-site/index.html": "a658c95dc7f25f3a0bc46a155f33f67dfcc8cd4d",
+    "/restaurants-sanitation-reports-site/main.254f365026ac81c0.js": "03982f9f956daaf1dfc5e1b4b515b4adc59fb9a9",
     "/restaurants-sanitation-reports-site/manifest.webmanifest": "f29fe62151085fd625389c0648e3fc94d3fe5a95",
     "/restaurants-sanitation-reports-site/polyfills.2b9c5dff7ab6e214.js": "aec885ad2cd2d09e63827c6351e44776b664e4f0",
     "/restaurants-sanitation-reports-site/runtime.c165d796577625e5.js": "6c3310776e320924ef701b69daf3c1a3b744ac8f",
