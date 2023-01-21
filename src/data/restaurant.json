@@ -27927,51 +27927,7 @@
         "name": "צרכנית אונגוארד",
         "id": "2219",
         "category": "מזון"
-    },
-    {
-        "reportRemarks": "ונטה יוצאת לכיוון המחסן",
-        "address": "ולנשטיין",
-        "hasLicense": "התראה בגין ליקויים",
-        "dateOfReport": "Wed Jun 16 2021",
-        "reportSummary": "התראה בגין ליקויים",
-        "city": "ירושלים",
-        "name": ".",
-        "id": "2220",
-        "category": "מזון"
-    },
-    {
-        "reportRemarks": "העסק נמצא במצב תברואי גרוע\r\nיש לערוך ניקיון יסודי בכל שטח  העסק\r\nמקררים , מכונות ברד ועוד...\r\nרצפה שבורה , קירות שבורים, תקרה נמצאה עם שומן ותקרה עם רטיבות",
-        "address": "ולנשטיין",
-        "hasLicense": "התראה בגין ליקויים",
-        "dateOfReport": "Wed Jun 16 2021",
-        "reportSummary": "התראה בגין ליקויים",
-        "city": "ירושלים",
-        "name": ".",
-        "id": "2221",
-        "category": "מזון"
-    },
-    {
-        "reportRemarks": "אין הפרדת פונקציות בעסק",
-        "address": "ולנשטיין",
-        "hasLicense": "התראה בגין ליקויים",
-        "dateOfReport": "Wed Jun 16 2021",
-        "reportSummary": "התראה בגין ליקויים",
-        "city": "ירושלים",
-        "name": ".",
-        "id": "2222",
-        "category": "מזון"
-    },
-    {
-        "reportRemarks": "ביצים טריות נמצאו ליד חומרי הגלם",
-        "address": "ולנשטיין",
-        "hasLicense": "התראה בגין ליקויים",
-        "dateOfReport": "Wed Jun 16 2021",
-        "reportSummary": "התראה בגין ליקויים",
-        "city": "ירושלים",
-        "name": ".",
-        "id": "2223",
-        "category": "מזון"
-    },
+    },       
     {
         "reportRemarks": null,
         "address": "המשורר אצג",
