@@ -104,7 +104,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   }
 
   ngOnInit() {
-    this.getUserLocation();
+    //this.getUserLocation();
     if(!this.hasDisclaimerBeenShown) {      
       this.openDisclaimerDialog();
       this.markDisclaimerAsSeen()

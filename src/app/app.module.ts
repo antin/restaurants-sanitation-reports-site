@@ -83,7 +83,7 @@ export const MY_FORMATS = {
     //Ng2SearchPipeModule,
     ],
   imports: [        
-    BrowserModule,    
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),    
     BrowserAnimationsModule,    
     FormsModule,    
     HttpClientModule,
@@ -99,10 +99,12 @@ export const MY_FORMATS = {
     ScrollingModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: RestaurantsListComponent},
-      {path: 'restaurants-list', component: RestaurantsListComponent},
-      {path: 'about', component: AboutComponent},      
-    ]),
+    { path: '', component: RestaurantsListComponent },
+    { path: 'restaurants-list', component: RestaurantsListComponent },
+    { path: 'about', component: AboutComponent },
+], {
+    initialNavigation: 'enabledBlocking'
+}),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
