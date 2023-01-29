@@ -18,7 +18,7 @@ import { orestaurantHeaderComponent } from 'src/app/features/restaurants-list/co
 import { orestaurantsListComponent } from 'src/app/features/restaurants-list/components/ORestaurantsListComponent';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-declare var gtag: any;
+declare const gtag: any;
 
 @Component({
   selector: 'app-restaurants-list',
@@ -40,7 +40,7 @@ export class RestaurantsListComponent implements AfterViewInit {
 
 
   // if service has   searchValue filter by it throw name and city
-  searchValue: string = "";
+  searchValue: string ;
 
   footerLinks = [
     {
@@ -119,7 +119,7 @@ export class RestaurantsListComponent implements AfterViewInit {
   }
   
   openDisclaimerDialog(): void {
-    let dialogRef = this.dialog.open(DialogOverviewDisclaimerDialog, {
+    const dialogRef = this.dialog.open(DialogOverviewDisclaimerDialogComponent, {
       width: '650px',
       data: { name: this.name, animal: this.animal }
     });
@@ -177,11 +177,6 @@ export class RestaurantsListComponent implements AfterViewInit {
 
   }
 
-  public clear() {
-
-
-  }
-
 
 
 
@@ -224,13 +219,13 @@ export class RestaurantsListComponent implements AfterViewInit {
 }
 
 @Component({
-  selector: 'dialog-overview-disclaimer-dialog',
-  templateUrl: './dialog-overview-disclaimer-dialog.html',
+  selector: 'app-dialog-overview-disclaimer-dialog',
+  templateUrl: './dialog-overview-disclaimer-dialog.component.html',
 })
-export class DialogOverviewDisclaimerDialog {
+export class DialogOverviewDisclaimerDialogComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewDisclaimerDialog>,
+    public dialogRef: MatDialogRef<DialogOverviewDisclaimerDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {

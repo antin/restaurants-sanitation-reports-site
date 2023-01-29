@@ -5,7 +5,7 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 declare const Smooch: any;
 
 @Component({
-    selector: 'orestaurant-footer',
+    selector: 'app-orestaurant-footer',
     template: `
         <footer class="footer">
             <div class='top-line'>
@@ -234,7 +234,7 @@ div.restaurants {
 `
 ]
 })
-export class orestaurantFooterComponent implements OnInit {
+export class orestaurantFooterComponent  {
     public hasadnaUrl = 'http://www.hasadna.org.il/';
     public theme = DEFAULT_THEME.ORESTAURANT_NG2_COMPONENTS_THEME;
 
@@ -253,23 +253,5 @@ export class orestaurantFooterComponent implements OnInit {
         return ret;
     }
 
-    ngOnInit() {
-        // if (Smooch && this.helpWidget) {
-        //     Smooch.init({
-        //         appId: '579deb5e8975e33e008f7067',
-        //         displayStyle: 'button',
-        //         customText: {
-        //           headerText: '?אפשר לעזור',
-        //           inputPlaceholder: 'כתבו לנו הודעה...',
-        //           sendButtonText: 'לשלוח',
-        //           introductionText: 'אתם מוזמנים לשאול אותנו הכל ומישהו' +
-        //             ' מצוות המתנדבים שלנו ישתדל לענות כמה שיותר מהר. ' +
-        //             'מכיוון שאנו לא תמיד זמינים, אתם מוזמנים להשאיר לנו ' +
-        //             'גם כתובת מייל בכדי שנוכל לחזור אליכם כשנראה את ההודעה.',
-        //         },
-        //     }).then(() => {
-        //         console.log('Smooch init');
-        //     });
-        // }
-    }
+    
 }

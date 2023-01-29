@@ -12,10 +12,10 @@ import RestaurantJson from '../../../../data/restaurant.json';
 
 export class RestaurantsListService {
 
-  private url : string = "https://restaurant-sanitation-2a8da-default-rtdb.europe-west1.firebasedatabase.app/restaurant.json";
+  private url  = "https://restaurant-sanitation-2a8da-default-rtdb.europe-west1.firebasedatabase.app/restaurant.json";
 
     // if service has Errors
-    public serviceHasError : boolean = false;
+    public serviceHasError  = false;
 
   public re : restaurant ;
   private searchValue : string
@@ -56,7 +56,7 @@ public getRestaurantsWithObservable() {
 }
 
   private extractData(res: any) {
-    let body = res;
+    const body = res;
     // filter json by searchValue
     return body;
 }

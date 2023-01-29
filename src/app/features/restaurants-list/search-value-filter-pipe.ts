@@ -4,7 +4,7 @@ import { filter } from 'rxjs/operators';
     name: 'searchValueFilter'
 })
 export class searchValueFilterPipe implements PipeTransform {
-    transform(data: any[], filterType: Object): any {
+    transform(data: any[], filterType: any): any {
         if (!data || !filter) {
             return data;
         }
