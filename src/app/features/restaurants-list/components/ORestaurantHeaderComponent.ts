@@ -14,7 +14,7 @@ import { DEFAULT_THEME } from './theme.orestaurant.he';
 //import {THEME_TOKEN, LANG_TOKEN} from '../constants';
 
 @Component({
-    selector: 'orestaurant-header',
+    selector: 'app-orestaurant-header',
     template: `
           <header aria-label='homepage' >
   <div class="logo">

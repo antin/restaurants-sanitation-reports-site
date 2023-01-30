@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <!-- <button mat-raised-button (click)="openDisclaimerDialog()">test1</button> -->
 
-<orestaurant-header  (search)="searchTermChanged($event)" [showSearchBar]="true" ></orestaurant-header>
+<app-orestaurant-header  (search)="searchTermChanged($event)" [showSearchBar]="true" ></app-orestaurant-header>
 <hr>
   
-<orestaurants-list  [searchValue]="searchValue"  ></orestaurants-list>
+<app-orestaurants-list  [searchValue]="searchValue"  ></app-orestaurants-list>
 <!--<orestaurant-footer    ></orestaurant-footer> -->

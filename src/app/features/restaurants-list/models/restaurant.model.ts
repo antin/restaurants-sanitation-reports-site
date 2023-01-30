@@ -21,7 +21,7 @@ export class restaurant   {
     taarichTashlum? : number;
     taarichTokef? : number;
     restaurant_sanitation? : restaurantSanitation;
-};
+}
 
 // https://www.airpair.com/firebase/posts/structuring-your-firebase-data
 export class restaurantSanitation {
@@ -30,4 +30,4 @@ export class restaurantSanitation {
   reportPdfUrl : string;
   restaurantsId : number;
   sanitationStatus : string;
-};
+}
