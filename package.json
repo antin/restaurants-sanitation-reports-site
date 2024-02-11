@@ -32,7 +32,7 @@
     "firebase": "^9.4.0",
     "material": "^0.4.3",
     "ng2-search-filter": "^0.5.1",
-    "npm": "^8.12.1",
+    "npm": "^10.2.2",
     "rxfire": "^6.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
